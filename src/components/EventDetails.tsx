@@ -9,7 +9,7 @@ type DetailItem = {
 const details: DetailItem[] = [
   {
     label: 'Date',
-    value: 'Saturday, April 5th',
+    value: 'Sunday, April 5th',
     subvalue: '2026',
   },
   {
