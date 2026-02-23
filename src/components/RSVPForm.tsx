@@ -94,7 +94,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSuccess }) => {
   return (
     <section className="rsvp-section section-container" aria-label="RSVP form">
       <h2 className="rsvp-heading">RSVP</h2>
-      <p className="rsvp-subheading">Kindly reply by March 15th, 2025</p>
+      <p className="rsvp-subheading">Kindly reply by March 15th, 2026</p>
 
       <form onSubmit={handleSubmit} noValidate className="rsvp-form">
         <div className="form-group">

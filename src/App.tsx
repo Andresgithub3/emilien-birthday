@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Hero from './components/Hero';
+import InvitationCard from './components/InvitationCard';
 import EventDetails from './components/EventDetails';
 import RSVPForm from './components/RSVPForm';
 import SuccessMessage from './components/SuccessMessage';
@@ -14,6 +15,10 @@ const App: React.FC = () => {
 
       <div className="soft-divider" />
 
+      <InvitationCard />
+
+      <div className="soft-divider" />
+
       <EventDetails />
 
       <div className="soft-divider" />
@@ -25,7 +30,7 @@ const App: React.FC = () => {
       )}
 
       <footer className="page-footer">
-        <p>With love, celebrating Natalia's first trip around the sun 🌸</p>
+        <p>With love, celebrating Natalia's first trip around the sun. We can't wait to see you there!</p>
       </footer>
 
       <style>{`

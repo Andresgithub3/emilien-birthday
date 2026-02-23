@@ -1,7 +1,6 @@
 import React from 'react';
 
 type DetailItem = {
-  icon: string;
   label: string;
   value: string;
   subvalue?: string;
@@ -9,26 +8,22 @@ type DetailItem = {
 
 const details: DetailItem[] = [
   {
-    icon: '🗓',
     label: 'Date',
     value: 'Saturday, April 5th',
-    subvalue: '2025',
+    subvalue: '2026',
   },
   {
-    icon: '⏰',
     label: 'Time',
-    value: '3:00 PM',
+    value: '3:00 PM to 6:00 PM',
   },
   {
-    icon: '📍',
     label: 'Location',
-    value: '4059 Orchards Drive SW',
-    subvalue: 'Edmonton, AB  T6X 1W5',
+    value: 'Orchards Residents Association - 4059 Orchards Drive SW Edmonton, AB  T6X 1W5',
+    subvalue: 'Room: Cherry and Crabapple',
   },
   {
-    icon: '💌',
     label: 'RSVP by',
-    value: 'March 15th, 2025',
+    value: 'March 15th, 2026',
   },
 ];
 
@@ -40,7 +35,6 @@ const EventDetails: React.FC = () => {
       <div className="details-grid">
         {details.map((item) => (
           <div key={item.label} className="detail-card">
-            <span className="detail-icon" aria-hidden="true">{item.icon}</span>
             <div className="detail-text">
               <p className="detail-label">{item.label}</p>
               <p className="detail-value">{item.value}</p>

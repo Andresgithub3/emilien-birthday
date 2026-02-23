@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import butterflyLeft from "../assets/pictures/left.png";
 
 const SuccessMessage: React.FC = () => {
   return (
@@ -7,11 +8,16 @@ const SuccessMessage: React.FC = () => {
       aria-live="polite"
       aria-atomic="true"
     >
-      <div className="success-icon" aria-hidden="true">🦋</div>
+      <img
+        src={butterflyLeft}
+        alt=""
+        aria-hidden="true"
+        className="success-butterfly"
+      />
       <h2 className="success-heading">Thank you!</h2>
       <p className="success-body">
-        Your RSVP has been received. We can't wait to celebrate
-        Natalia's special day with you!
+        Your RSVP has been received. We can't wait to celebrate Natalia's
+        special day with you!
       </p>
       <p className="success-footnote">
         If you have any questions, please reach out to the family directly.
@@ -19,6 +25,8 @@ const SuccessMessage: React.FC = () => {
 
       <style>{`
         .success {
+          position: relative;
+          overflow: hidden;
           text-align: center;
           padding: 2.5rem;
           background: var(--color-bg-card);
@@ -36,13 +44,19 @@ const SuccessMessage: React.FC = () => {
           .success { animation: none; }
         }
 
-        .success-icon {
-          font-size: 3.5rem;
-          margin-bottom: 1rem;
-          display: block;
+        .success-butterfly {
+          position: absolute;
+          width: 15rem;       
+          height: auto;
+          top: -4rem;         
+          left: 3rem;        
+          filter: drop-shadow(0 3px 10px rgba(155, 123, 184, 0.3));
+          pointer-events: none;
         }
 
         .success-heading {
+          position: relative;
+          z-index: 1;
           font-family: var(--font-script);
           font-size: 3.2rem;
           color: var(--color-primary);
@@ -50,6 +64,8 @@ const SuccessMessage: React.FC = () => {
         }
 
         .success-body {
+          position: relative;
+          z-index: 1;
           font-size: 1.1rem;
           color: var(--color-text);
           max-width: 380px;
@@ -58,6 +74,8 @@ const SuccessMessage: React.FC = () => {
         }
 
         .success-footnote {
+          position: relative;
+          z-index: 1;
           font-size: 0.85rem;
           font-style: italic;
           color: var(--color-text-light);

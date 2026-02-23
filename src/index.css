@@ -1,3 +1,12 @@
+/* ===== LOCAL FONTS ===== */
+@font-face {
+  font-family: 'Pinyon Script';
+  src: url('/fonts/PinyonScript-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
   --color-bg:           #faf7fc;
@@ -11,7 +20,7 @@
   --color-success:      #7fb785;
   --color-error:        #c97a7a;
 
-  --font-script: 'Great Vibes', cursive;
+  --font-script: 'Pinyon Script', cursive;
   --font-body:   'Cormorant Garamond', Georgia, serif;
 
   --section-max-width: 680px;
