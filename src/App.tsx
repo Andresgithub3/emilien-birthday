@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Hero from './components/Hero';
+// import Hero from './components/Hero';
 import InvitationCard from './components/InvitationCard';
 import EventDetails from './components/EventDetails';
 import RSVPForm from './components/RSVPForm';
@@ -11,7 +11,7 @@ const App: React.FC = () => {
 
   return (
     <main className="page-wrapper">
-      <Hero />
+      {/* <Hero /> */}
 
       <div className="soft-divider" />
 
