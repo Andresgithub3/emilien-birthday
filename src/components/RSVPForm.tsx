@@ -94,7 +94,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSuccess }) => {
   return (
     <section className="rsvp-section section-container" aria-label="RSVP form">
       <h2 className="rsvp-heading">RSVP</h2>
-      <p className="rsvp-subheading">Kindly reply by March 15th, 2026</p>
+      <p className="rsvp-subheading">Kindly reply by March 31st, 2026</p>
 
       <form onSubmit={handleSubmit} noValidate className="rsvp-form">
         <div className="form-group">
@@ -128,8 +128,8 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSuccess }) => {
             disabled={isSubmitting}
           >
             <option value="">Please select...</option>
-            <option value="yes">Joyfully accepts</option>
-            <option value="no">Regretfully declines</option>
+            <option value="yes">🎉 Joyfully accepts!</option>
+            <option value="no">😢 Regretfully declines</option>
           </select>
           {errors.attending && (
             <span className="field-error" role="alert">{errors.attending}</span>
@@ -169,7 +169,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSuccess }) => {
             name="message"
             value={form.message}
             onChange={handleChange}
-            placeholder="Share a warm wish for Natalia..."
+            placeholder="Share a warm wish for Emilien!"
             className="form-input"
             rows={3}
             disabled={isSubmitting}
@@ -185,7 +185,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSuccess }) => {
           className="btn-primary rsvp-submit"
           disabled={isSubmitting}
         >
-          {isSubmitting ? 'Sending...' : 'Send RSVP'}
+          {isSubmitting ? 'Sending...' : 'Send RSVP 🎈'}
         </button>
       </form>
 
@@ -193,18 +193,20 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSuccess }) => {
         .rsvp-section { text-align: center; }
 
         .rsvp-heading {
-          font-family: var(--font-script);
-          font-size: 2.8rem;
+          font-family: var(--font-display);
+          font-size: 2.6rem;
           color: var(--color-primary);
+          text-shadow: 3px 3px 0 var(--color-primary-dark);
           margin-bottom: 0.3rem;
+          letter-spacing: 0.03em;
         }
 
         .rsvp-subheading {
-          font-size: 0.88rem;
-          font-style: italic;
+          font-size: 0.95rem;
+          font-weight: 600;
           color: var(--color-text-light);
           margin-bottom: 2rem;
-          letter-spacing: 0.06em;
+          letter-spacing: 0.04em;
         }
 
         .rsvp-form {
@@ -220,6 +222,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSuccess }) => {
           font-style: italic;
           text-transform: none;
           letter-spacing: 0;
+          font-weight: 400;
         }
 
         textarea.form-input {
@@ -239,7 +242,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSuccess }) => {
         .rsvp-submit {
           align-self: center;
           margin-top: 0.5rem;
-          min-width: 180px;
+          min-width: 200px;
         }
       `}</style>
     </section>

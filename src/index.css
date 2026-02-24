@@ -1,33 +1,33 @@
-/* ===== LOCAL FONTS ===== */
-@font-face {
-  font-family: 'Pinyon Script';
-  src: url('/fonts/PinyonScript-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
-  --color-bg:           #faf7fc;
-  --color-bg-card:      #f5f0fa;
-  --color-primary:      #9b7bb8;
-  --color-primary-dark: #7a5c99;
-  --color-accent:       #c9a7d8;
-  --color-accent-soft:  #e8d8f0;
-  --color-text:         #4a3b5c;
-  --color-text-light:   #8a7a9b;
-  --color-success:      #7fb785;
+  --color-bg:           #fffdf4;
+  --color-bg-card:      #fff8e7;
+  --color-primary:      #e63d2f;
+  --color-primary-dark: #c0291c;
+  --color-yellow:       #f9c10e;
+  --color-yellow-dark:  #e0a800;
+  --color-blue:         #1a8fc1;
+  --color-blue-dark:    #136e97;
+  --color-green:        #4caf50;
+  --color-orange:       #f47b20;
+  --color-accent:       #f9c10e;
+  --color-accent-soft:  #fde98a;
+  --color-text:         #1a1a1a;
+  --color-text-light:   #555;
+  --color-success:      #4caf50;
   --color-error:        #c97a7a;
 
-  --font-script: 'Pinyon Script', cursive;
-  --font-body:   'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Lilita One', 'Arial Black', sans-serif;
+  --font-body:    'Nunito', 'Comic Sans MS', sans-serif;
 
-  --section-max-width: 680px;
+  --section-max-width: 700px;
   --section-padding:   2rem;
 
   --transition-default: 200ms ease;
 }
+
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700&display=swap');
 
 /* ===== RESET ===== */
 *, *::before, *::after {
@@ -43,6 +43,10 @@ html {
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle at 10% 15%, rgba(249,193,14,0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(230,61,47,0.1) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(26,143,193,0.08) 0%, transparent 60%);
   color: var(--color-text);
   min-height: 100vh;
   line-height: 1.6;
@@ -67,38 +71,45 @@ body {
 .soft-divider {
   width: 100%;
   max-width: var(--section-max-width);
-  height: 1px;
+  height: 4px;
+  border-radius: 4px;
   background: linear-gradient(
     to right,
-    transparent,
-    var(--color-accent-soft),
-    var(--color-accent),
-    var(--color-accent-soft),
-    transparent
+    var(--color-primary),
+    var(--color-yellow),
+    var(--color-blue),
+    var(--color-green),
+    var(--color-orange)
   );
+  opacity: 0.5;
 }
 
 /* ===== BUTTONS ===== */
 .btn-primary {
   display: inline-block;
-  padding: 0.85rem 2.5rem;
+  padding: 0.9rem 2.8rem;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: #fff;
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  border: none;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  border: 3px solid #fff;
   border-radius: 50px;
   cursor: pointer;
   transition: transform var(--transition-default),
               box-shadow var(--transition-default);
-  box-shadow: 0 4px 15px rgba(155, 123, 184, 0.3);
+  box-shadow: 0 4px 0 var(--color-primary-dark), 0 6px 16px rgba(230,61,47,0.3);
+  text-transform: uppercase;
 }
 
 .btn-primary:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(155, 123, 184, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 7px 0 var(--color-primary-dark), 0 10px 24px rgba(230,61,47,0.35);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 var(--color-primary-dark), 0 4px 10px rgba(230,61,47,0.25);
 }
 
 .btn-primary:disabled {
@@ -115,9 +126,10 @@ body {
 
 .form-label {
   font-size: 0.9rem;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-text-light);
+  color: var(--color-blue-dark);
 }
 
 .form-input,
@@ -127,8 +139,8 @@ body {
   font-size: 1rem;
   color: var(--color-text);
   background: #fff;
-  border: 1px solid var(--color-accent-soft);
-  border-radius: 8px;
+  border: 2px solid var(--color-accent-soft);
+  border-radius: 10px;
   outline: none;
   transition: border-color var(--transition-default),
               box-shadow var(--transition-default);
@@ -136,8 +148,8 @@ body {
 
 .form-input:focus,
 .form-select:focus {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(201, 167, 216, 0.2);
+  border-color: var(--color-yellow);
+  box-shadow: 0 0 0 3px rgba(249,193,14,0.25);
 }
 
 .form-input.error,

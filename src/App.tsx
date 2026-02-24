@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import Hero from './components/Hero';
 import InvitationCard from './components/InvitationCard';
 import EventDetails from './components/EventDetails';
 import RSVPForm from './components/RSVPForm';
@@ -11,9 +10,6 @@ const App: React.FC = () => {
 
   return (
     <main className="page-wrapper">
-      {/* <Hero /> */}
-
-      <div className="soft-divider" />
 
       <InvitationCard />
 
@@ -30,17 +26,18 @@ const App: React.FC = () => {
       )}
 
       <footer className="page-footer">
-        <p>With love, celebrating Natalia's first trip around the sun. We can't wait to see you there!</p>
+        <p>Can't wait to celebrate with you on Sesame Street! 🎉</p>
       </footer>
 
       <style>{`
         .page-footer {
-          font-size: 0.82rem;
-          font-style: italic;
+          font-family: var(--font-body);
+          font-size: 0.95rem;
+          font-weight: 600;
           color: var(--color-text-light);
           text-align: center;
           padding: 0.5rem 0 2rem;
-          letter-spacing: 0.04em;
+          letter-spacing: 0.02em;
         }
       `}</style>
     </main>
