@@ -22,10 +22,10 @@ const Hero: React.FC = () => {
 
       <div className="hero-text">
         <p className="hero-join-us">join us for</p>
-        <h1 className="hero-name">Natalia's</h1>
+        <h1 className="hero-name">Emilien's</h1>
         <p className="hero-subtitle">
-          <span className="hero-ordinal">1</span>
-          <sup className="hero-sup">st</sup>
+          <span className="hero-ordinal">2</span>
+          <sup className="hero-sup">nd</sup>
           <span className="hero-birthday-script"> birthday</span>
         </p>
       </div>
